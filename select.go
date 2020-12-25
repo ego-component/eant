@@ -10,7 +10,9 @@ type AntSelectOption struct {
 }
 
 func NewSelect() *antSelect {
-	return &antSelect{}
+	return &antSelect{
+		options: make([]AntSelectOption, 0),
+	}
 }
 
 func (a *antSelect) SetOption(title string, value interface{}) {
