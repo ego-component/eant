@@ -1,6 +1,6 @@
 package gotoant
 
-type antSelect struct {
+type AntSelect struct {
 	options []AntSelectOption
 }
 
@@ -9,19 +9,19 @@ type AntSelectOption struct {
 	Value interface{} `json:"value"`
 }
 
-func NewSelect() *antSelect {
-	return &antSelect{
+func NewSelect() *AntSelect {
+	return &AntSelect{
 		options: make([]AntSelectOption, 0),
 	}
 }
 
-func (a *antSelect) SetOption(title string, value interface{}) {
+func (a *AntSelect) SetOption(title string, value interface{}) {
 	a.options = append(a.options, AntSelectOption{
 		Title: title,
 		Value: value,
 	})
 }
 
-func (a *antSelect) GetOptions() []AntSelectOption {
+func (a *AntSelect) GetOptions() []AntSelectOption {
 	return a.options
 }
