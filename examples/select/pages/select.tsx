@@ -43,7 +43,7 @@ const ListForm: React.FC<ListFormProps> = (props) => {
                 });
                 return;
             }
-            setSelectData(r.data)
+            setSelectData(r.data);
         })
     }, []);
 
@@ -71,11 +71,13 @@ const ListForm: React.FC<ListFormProps> = (props) => {
                     label="分类"
                 >
                     <Select
+                        mode="multiple"
                         style={{ width: '100%' }}
                         placeholder="分类"
+                        optionFilterProp={"name"}
                     >
-                        {  selectData || []).map((item,index)=>{
-                            return (<Option key={index} value={item.value}>{item.title}</Option>)
+                        {  (selectData || []).map((item,index)=>{
+                            return (<Select.Option key={index} name={item.title} value={item.value}>{item.title}</Select.Option>)
                         })}
                     </Select>
                 </Form.Item>

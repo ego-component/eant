@@ -1,5 +1,6 @@
 package gotoant
 
+// Select ant design select结构 https://ant.design/components/select-cn/#Option-props
 type AntSelect struct {
 	options []AntSelectOption
 }
