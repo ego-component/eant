@@ -3,28 +3,33 @@ package gotoant
 // TreeSelect ant design树形结构 https://ant.design/components/tree-select-cn/#TreeNode-props
 // Tree https://ant.design/components/tree-cn/#TreeNode-props
 type AntTreeSelect struct {
-	options     AntTreeSelectOptions
-	err         error
-	processTree bool
+	originOptions   AntTreeSelectOptions
+	deepCopyOptions AntTreeSelectOptions
+	options         AntTreeSelectOptions
+	err             error
+	processTree     bool
 }
 
 func NewTreeSelect() *AntTreeSelect {
 	return &AntTreeSelect{
-		options: make(AntTreeSelectOptions, 0),
+		originOptions:   make(AntTreeSelectOptions, 0),
+		deepCopyOptions: make(AntTreeSelectOptions, 0),
+		options:         make(AntTreeSelectOptions, 0),
 	}
 }
 
 func (a *AntTreeSelect) SetOption(option *AntTreeSelectOption) {
-	a.options = append(a.options, option)
+	a.originOptions = append(a.originOptions, option)
+	a.deepCopyOptions = append(a.deepCopyOptions, option)
 }
 
 func (a *AntTreeSelect) WithTree() *AntTreeSelect {
-	a.options.toTree()
+	a.options = a.deepCopyOptions.toTree()
 	return a
 }
 
 func (a *AntTreeSelect) WithLeafEnable() *AntTreeSelect {
-	a.options.withLeafEnable()
+	a.originOptions.withLeafEnable()
 	return a
 }
 
