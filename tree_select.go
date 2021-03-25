@@ -39,8 +39,8 @@ func (a *AntTreeSelect) GetOptions() AntTreeSelectOptions {
 
 type AntTreeSelectOption struct {
 	Title    string                `json:"title"`
-	Pid      int                   `json:"pid"` // 父级id
-	Key      int                   `json:"key"` // 自己的id
+	Pid      interface{}           `json:"pid"` // 父级id
+	Key      interface{}           `json:"key"` // 自己的id
 	Disabled bool                  `json:"disabled"`
 	IsLeaf   bool                  `json:"isLeaf"`
 	Children *AntTreeSelectOptions `json:"children"`
@@ -49,7 +49,7 @@ type AntTreeSelectOption struct {
 type AntTreeSelectOptions []*AntTreeSelectOption
 
 func (m AntTreeSelectOptions) toTree() AntTreeSelectOptions {
-	mTreeMap := make(map[int]*AntTreeSelectOption)
+	mTreeMap := make(map[interface{}]*AntTreeSelectOption)
 	for _, item := range m {
 		mTreeMap[item.Key] = item
 	}
