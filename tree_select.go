@@ -43,7 +43,7 @@ type AntTreeSelectOption struct {
 	Key      interface{}           `json:"key"` // 自己的id
 	Disabled bool                  `json:"disabled"`
 	IsLeaf   bool                  `json:"isLeaf"`
-	Children *AntTreeSelectOptions `json:"children"`
+	Children *AntTreeSelectOptions `json:"children,omitempty"`
 }
 
 type AntTreeSelectOptions []*AntTreeSelectOption
