@@ -1,3 +1,3 @@
-module github.com/gotomicro/gotoant
+module github.com/ego-component/eant
 
-go 1.15
+go 1.17

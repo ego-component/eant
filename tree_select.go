@@ -1,4 +1,4 @@
-package gotoant
+package eant
 
 // TreeSelect ant design树形结构 https://ant.design/components/tree-select-cn/#TreeNode-props
 // Tree https://ant.design/components/tree-cn/#TreeNode-props
