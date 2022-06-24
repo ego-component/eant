@@ -18,7 +18,7 @@ func NewTreeSelect() *AntTreeSelect {
 }
 
 func (a *AntTreeSelect) SetOption(option *AntTreeSelectOption) {
-	option.Key = option.Value
+	option.Value = option.Key
 	a.originOptions = append(a.originOptions, option)
 	a.deepCopyOptions = append(a.deepCopyOptions, option)
 }
