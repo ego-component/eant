@@ -2,6 +2,9 @@
 GO结构体转换为Ant Design Pro设计规范
 
 * Select
+* Tree
+  * ant 3.x 使用key作为值，使用eant v0.2.0版本
+  * ant 4.x 使用key作为值，使用eant v0.2.0版本
 * TreeSelect 
   * ant 3.x 使用key作为值，使用eant v0.1.0版本
   * ant 4.x 使用value作为值，使用eant v0.2.0版本

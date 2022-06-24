@@ -1,7 +1,6 @@
 package eant
 
-// TreeSelect ant design树形结构 https://ant.design/components/tree-select-cn/#TreeNode-props
-// Tree https://ant.design/components/tree-cn/#TreeNode-props
+// AntTreeSelect ant design树形结构 https://ant.design/components/tree-select-cn/#TreeNode-props
 type AntTreeSelect struct {
 	originOptions   AntTreeSelectOptions
 	deepCopyOptions AntTreeSelectOptions
