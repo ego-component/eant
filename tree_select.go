@@ -18,6 +18,7 @@ func NewTreeSelect() *AntTreeSelect {
 }
 
 func (a *AntTreeSelect) SetOption(option *AntTreeSelectOption) {
+	option.Key = option.Value
 	a.originOptions = append(a.originOptions, option)
 	a.deepCopyOptions = append(a.deepCopyOptions, option)
 }
@@ -40,6 +41,7 @@ type AntTreeSelectOption struct {
 	Title    string                `json:"title"`
 	Pid      interface{}           `json:"pid"`   // 父级id
 	Value    interface{}           `json:"value"` // 自己的id
+	Key      interface{}           `json:"key"`   // 冗余，因为tree treeselect 能够复用
 	Disabled bool                  `json:"disabled"`
 	IsLeaf   bool                  `json:"isLeaf"`
 	Children *AntTreeSelectOptions `json:"children,omitempty"`
